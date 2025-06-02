@@ -78,3 +78,5 @@ const CodeBlocks = ({
   );
 };
 
+export default CodeBlocks;
+

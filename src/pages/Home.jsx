@@ -4,11 +4,12 @@ import { Link } from "react-router-dom"
 import HighlightText from "../components/core/HomePage/HighlightText"
 import Button from "../components/core/HomePage/Button";
 import CodeBlocks from "../components/core/HomePage/CodeBlocks"
+import Footer from "../components/common/Footer"
 
 const Home=()=>{
     return(
         <div>
-                 <div className="relative mx-auto flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 text-white">
+                <div className="relative mx-auto flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 text-white">
                 {/* //  {section 1}
             // Heading */}
             <div className=" mt-10 text-center text-4xl font-semibold">
@@ -60,13 +61,51 @@ const Home=()=>{
             />
             </div>
 
+             {/* Code Section 2 */}
+        <div>
+          <CodeBlocks
+            position={"lg:flex-row-reverse"}
+            heading={
+              <div className="w-[100%] text-4xl font-semibold lg:w-[50%]">
+                Powered by
+                <HighlightText text={"Runes, REE, and Internet Computer"} />
+              </div>
+            }
+            subheading={
+              "USDB is a Bitcoin-backed stablecoin built on Runes, governed by REE, and powered by Internet Computer for scalable, secure, and trustless financial infrastructure."
+            }
+            ctabtn1={{
+              btnText: "Get Started Now",
+              link: "/signup",
+              active: true,
+            }}
+            ctabtn2={{
+              btnText: "Explore Repos",
+              link: "/signup",
+              active: false,
+            }}
+            codeColor={"text-white"}
+            codeblock={`struct Storage { num: u32 }\nimpl Storage {\nfn new() -> Self { Storage { num: 0 } \nfn set(&mut self, n: u32) { self.num = n; }\nfn get(&self) -> u32 { self.num }\n}\nfn main() {\nlet mut s = Storage::new();\ns.set(100);\nlet val = s.get();\nprintln!("{}", val);\n}
+`}
+            backgroundGradient={<div className="codeblock2 absolute"></div>}
+          />
+        </div>
+
+
+
+
+
+         
+
+
         
 
-            </div>
-
-
-
+         </div>
+         {/* Footer */}
+          <Footer />
         </div>
+
+
 
     )
     
